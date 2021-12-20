@@ -4,6 +4,7 @@ require "lib/mobizon.php";
 
 $campaignCode = "";
 $enviroments = parse_ini_file('../.env');
+
 $init = new Mobizon($enviroments["API_KEY"]);
 
 /**
@@ -48,6 +49,5 @@ $campaignAddRecipients = $init->call("campaign", "AddRecipients", [
 $campaignSend = $init->call("campaign", "Send", [
   "id" => $campaignCode
 ]);
-
 
 echo $campaignSend;
